@@ -1,0 +1,23 @@
+apiVersion: apps/v1 
+kind: Deployment              #Controller - self healing
+metadata:
+  name: httpd-deployment
+  labels:
+    app: http
+    env: prod 
+spec: 
+  replicas: 10               #to create copies of following pod
+  selector:
+    matchLabels:
+      app: http
+  template:
+    metadata: 
+      name: httpd-pod 
+      labels:
+        app: http
+    spec:
+      containers:
+        - name: httpd 
+          image: httpd:latest 
+          ports:
+            - containerPort: 80
