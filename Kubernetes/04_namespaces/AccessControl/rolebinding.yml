@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: pods-and-podlogs-reader-binding
+  namespace: dev-team
+subjects:
+- kind: User
+  name: nextops.t32@gmail.com
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pods-and-podlogs-reader
+  apiGroup: rbac.authorization.k8s.io

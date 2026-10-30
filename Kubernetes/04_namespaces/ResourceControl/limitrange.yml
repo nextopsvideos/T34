@@ -1,0 +1,14 @@
+apiVersion: v1 
+kind: LimitRange
+metadata:
+  name: dev-team-limit-range
+  namespace: dev-team
+spec:
+  limits:
+  - type: Pod
+    min:
+      cpu: "100m"                  #minimum cpu      100m CPU per pod
+      memory: "100Mi"              #minimum memory   100Mi RAM per pod
+    max:
+      cpu: "200m"                  #maximum cpu      200m CPU per pod
+      memory: "200Mi"              #maximum memory   200Mi RAM per pod
