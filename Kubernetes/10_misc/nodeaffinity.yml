@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-node-affinity
+  labels:
+    app: http-node-affinity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: http-node-affinity
+  template:
+    metadata:
+      labels:
+        app: http-node-affinity
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: gpuEnabled
+                operator: In
+                values:
+                - "true"
+      containers:
+      - name: httpd-app
+        image: httpd
+        ports:
+        - containerPort: 80
