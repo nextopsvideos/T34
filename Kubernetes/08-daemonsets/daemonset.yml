@@ -38,6 +38,3 @@ spec:
       - name: sys
         hostPath:
           path: /sys
----
-apiVersion: v1
-kind: Service
