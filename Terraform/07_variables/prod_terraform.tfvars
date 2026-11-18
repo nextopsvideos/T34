@@ -1,0 +1,9 @@
+rg_name     =  "PRODAKSRG"
+rg_location =  "eastus"
+acr_name    = "nextopsprdacrt34"
+acr_sku     = "Premium"
+aks_name    = "nextopsprdakst34"
+aks_dns_prefix = "nextops"
+aks_node_count = 3
+aks_node_vm_size = "Standard_A2_v2"
+aks_env = "prod"
