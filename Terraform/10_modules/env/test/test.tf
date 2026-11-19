@@ -1,0 +1,12 @@
+module "test" {
+    source              = "../../aks"
+    rg_name             = "nextopstestaksrg"
+    rg_location         = "centralus"
+    acr_name            = "nextopstestacrt34"
+    acr_sku             = "Standard"
+    aks_name            = "nextopstestakst34"
+    aks_dns_prefix      = "nextopstest"
+    aks_node_count      = "2"
+    aks_node_vm_size    = "Standard_A2_v2"
+    aks_env             = "test"  
+}
