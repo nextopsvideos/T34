@@ -1,0 +1,5 @@
+provider
+count
+for_each
+depends_on
+life_cycle
