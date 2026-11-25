@@ -6,7 +6,7 @@ metadata:
     app: nginx
     env: prod
 spec: 
-  replicas: 1                   # it creates a replicaset in the background
+  replicas: 10                   # it creates a replicaset in the background
   selector:
     matchLabels:
       app: nginx
